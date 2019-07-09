@@ -1883,22 +1883,67 @@ footer {
     display: block;
     background-color: #171717;
     min-height: 213px;
+    overflow: hidden;
+}
+
+.footer__line-wrap {
+    position: relative;
+}
+
+.footer__line {
+    bottom: 0;
+    height: 2px;
+    background-color: #56d84d;
+    border: none;
+    transform: rotate(-69.5deg);
+    width: 576px;
+    position: absolute;
+    left: 50%;
+    margin-left: -283px;
+}
+
+.zet-web {
+    padding-top: 70px;
+}
+
+.zet-web__logo {
+    display: block;
+    width: 115px;
+    margin: 0 auto;
+}
+
+.footer-contacts {
+    padding-top: 45px;
+}
+
+.footer-contacts__address {
+    padding-left: 40px;
+    padding-bottom: 20px;
+}
+
+.footer-contacts__mail-block {
+    padding-left: 20px;
+    padding-bottom: 20px;
 }
 
 
-
-.zet-web__logo {
-    width: 115px;
+.footer-contacts a{
+    text-decoration: none;
 }
 
 .footer-contacts__img {
-    width: 37px;
-    height: 37px;
+    width: 20px;
+    height: auto;
 }
 
-.social-networks__icon {
-    width: 37px;
-    height: 37px;
+.footer-contacts__caption {
+    font-size: 16px;
+    font-family: "Proxima Nova Lt";
+    color: rgb(255, 255, 255)!important;
+    line-height: 1.2;
+    text-align: left;
+    margin-left: 10px;
+    padding-bottom: 20px;
 }
 
 .b2b {
@@ -1921,6 +1966,47 @@ footer {
     letter-spacing: 1px;
     margin-top: 10px;
 }
+
+.social-networks {
+    position: relative;
+    width: 100%;
+    height: 212px;
+}
+
+.social-networks__wrap {
+    background-image: url('footer_bg.png');
+    background-repeat: no-repeat; 
+    background-size: cover;
+    position: absolute;
+    bottom: 0px;
+    height: 227px;
+    width: 100%;
+}
+
+.social-networks__content {
+    width: 25%;
+}
+
+.social-networks__fb {
+    padding-top: 70px;
+    padding-bottom: 35px;
+    display: block;
+    width: 100%;
+    text-align: right;
+}
+
+.social-networks__in {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.social-networks__icon {
+    width: 37px;
+    height: 37px;
+    display: inline-block;
+}
+
   
 
 /* #endregion footer */
@@ -1988,7 +2074,6 @@ footer {
         max-width: 100%;
         width: 100%;
         height: auto;
-        min-height: 50%;
         position: static;
     }
 
@@ -2250,6 +2335,35 @@ footer {
         position: static;
         min-height: 325px;
         width: 100%;
+    }
+
+    .b2b {
+        display: flex;
+        flex-direction: column;
+        padding-top: 65px;
+        padding-bottom: 50px;
+    }
+
+    .b2b__logo {
+        width: 55%;
+    }
+
+    .footer__line {
+        transform: rotate(-10.5deg);
+    }
+
+    .zet-web {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 0px;
+    }
+
+    .zet-web__logo {
+        margin: 0;
+    }
+
+    .footer-contacts {
+        padding-bottom: 40px;
     }
 }
 
