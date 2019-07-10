@@ -1,6 +1,6 @@
 @font-face {
 font-family: "Proxima Nova Bl";
-src: url(fonts/Proxima_Nova_Black.otf);
+src: url(fonts/Proxima_Nova_#171717.otf);
 }
 
 @font-face {
@@ -23,9 +23,9 @@ font-family: "Proxima Nova Rg";
 src: url(fonts/Proxima_Nova_Regular.otf);
 }
 
-.main {
-    background-color: black;
-}
+/* .main {
+    background-color: #171717;
+} */
 .navbar {
     max-width: 1160px;
     align-self: center;
@@ -74,7 +74,11 @@ src: url(fonts/Proxima_Nova_Regular.otf);
 }
 
 .navbar-toggler {
-    background: black;
+    background-color: #fff;
+    background-image: url('menu.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
 }
 
 
@@ -84,16 +88,19 @@ src: url(fonts/Proxima_Nova_Regular.otf);
     overflow: hidden;
 }
 
-.intro__wrap {
-    padding-top: 108px;
-    background-color: black;
-    overflow: hidden;
-    clip-path: polygon(18% 0%, 100% 0, 100% 100%, 0 100%, 0% 25%);
-    -webkit-clip-path: polygon(18% 0%, 100% 0, 100% 100%, 0 100%, 0% 25%);
+.intro__top-image {
+    width: 100%;
+    height: auto;
     margin-bottom: -1px;
 }
 
-.intro__line {
+.intro__wrap {
+    background-color: #171717;
+    overflow: hidden;
+    margin-bottom: -1px;
+}
+
+/* .intro__line {
     height: 4px;
     background-color: #3bc431;
     transform: rotate(-28deg);
@@ -104,7 +111,7 @@ src: url(fonts/Proxima_Nova_Regular.otf);
     z-index: 1;
     left: -29px;
     top: -16px;
-}
+} */
 
 .intro__title {
     color: #fff;
@@ -159,7 +166,7 @@ src: url(fonts/Proxima_Nova_Regular.otf);
     width: 100%;
     border: 1px solid #52812c;
     border-radius: 28px;
-    background-color: black;
+    background-color: #171717;
     color: #fff;
     height: 55px;
     margin-bottom:20px;
@@ -216,7 +223,7 @@ src: url(fonts/Proxima_Nova_Regular.otf);
 }
 
 .about {
-    background-color: black;
+    background-color: #171717;
 }
 
 .about__wrap {
@@ -266,10 +273,10 @@ src: url(fonts/Proxima_Nova_Regular.otf);
 /*___________________statistics-START______________*/
 
 .statistics__wrap {
-    clip-path: polygon(100% 0, 0 3%, 0 100%, 100% 100%);
-    -webkit-clip-path: polygon(100% 0, 0 3%, 0 100%, 100% 100%);
+    /* clip-path: polygon(100% 0, 0 3%, 0 100%, 100% 100%);
+    -webkit-clip-path: polygon(100% 0, 0 3%, 0 100%, 100% 100%); */
     margin-top: -210px;
-    background-color: black;
+    background-color: #171717;
 }
 
 .statistics__title-wrap {
@@ -366,12 +373,22 @@ src: url(fonts/Proxima_Nova_Regular.otf);
     line-height: 1.2;
     margin-bottom: 15px;
 }
+
+#carouselStatistics .carousel-indicators li{
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+#carouselStatistics .carousel-indicators .active {
+    background-color: #171717!important;
+}
 /*___________________statistics-END______________*/
 
 /*___________________services-START______________*/
 .services {
-    background-color: black;
+    background-color: #171717;
     display: block;
+    margin-top: -1px;
 }
 
 .services__wrap {
@@ -556,24 +573,25 @@ src: url(fonts/Proxima_Nova_Regular.otf);
 .functionality {
     margin-top: -80px;
     width: 100%;
-    background-color: black;
+    background-color: #171717;
    
 }
 
 .functionality__block {
     padding-top: 185px;
     background-color: white;
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 88%);
-    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 88%);
-    height: 745px;
+    /* clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 88%);
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 88%); */
+    min-height: 745px;
 }
 
 .functionality-wrap {
-    background-image: url('rgeen-background.png');
+    /* background-image: url('rgeen-background.png'); */
+    background-image: url('green__bg.png');
     background-repeat: no-repeat;
     background-position-x: right;
     background-size: cover;
-    height: 410px;
+    min-height: 525px;
 }
 
 .functionality__title-block {
@@ -735,13 +753,13 @@ src: url(fonts/Proxima_Nova_Regular.otf);
 
 
 .gallery {
-    padding-top: 135px;
+    background-color:#171717; 
 }
 
 .gallery__wrap {
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 88%);
+    /* clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 88%);
     -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 88%);
-    min-height: 790px;
+    min-height: 790px; */
 }
 
 .gallery__title {
@@ -883,10 +901,10 @@ src: url(fonts/Proxima_Nova_Regular.otf);
 
 .card-link__title {
     font-size: 28px;
-    font-weight: 500;
-    /* font-family: "ProximaNova"; */
+    font-weight: 600;
+    font-family: "Proxima Nova Lt";
     line-height: 1.2;
-    text-align: center;
+    text-align: left;
     letter-spacing: 1px;
     background: linear-gradient(to right, rgba(60,171,71,1) 0%, rgba(168,232,84,1) 100%);
     background-clip: text;
@@ -894,6 +912,7 @@ src: url(fonts/Proxima_Nova_Regular.otf);
     color: transparent;
     width: 90%;
     margin: 0px;
+    margin-left: 200px;
 } 
 
 .card-link__icon {
@@ -981,6 +1000,7 @@ src: url(fonts/Proxima_Nova_Regular.otf);
 .consulting {
     background-color: #fff;
     padding-bottom: 25px;
+    display: block;
 }
 
 .consulting__wrap {
@@ -1007,7 +1027,7 @@ src: url(fonts/Proxima_Nova_Regular.otf);
 
 .consulting__form {
     width: 390px;
-    margin-top: 50px;
+    margin: 50px auto 0px;
 }
 
 .consulting__title {
@@ -1221,6 +1241,11 @@ src: url(fonts/Proxima_Nova_Regular.otf);
     font-weight: 500;
     list-style-position: inside;
     margin-bottom: 11px;
+}
+
+#realizationCarousel .carousel-indicators li{
+    margin-left: 7px;
+    margin-right: 7px;
 }
  
 .realization__button {
@@ -1838,6 +1863,7 @@ src: url(fonts/Proxima_Nova_Regular.otf);
     max-height: 60px;
     overflow: hidden;
     font-weight: 600;
+    margin-top: 20px;
 }
   
 .news-caption {
@@ -2116,7 +2142,7 @@ footer {
     }
 
     .functionality-wrap {
-        height: 675px;
+        height: 845px;
     }
 
     .functionality__block {
@@ -2157,7 +2183,7 @@ footer {
     }
 
     .gallery {
-        padding-top: 45px;
+        margin-top: -60px;
     }
     
     .gallery__title {
@@ -2216,6 +2242,7 @@ footer {
     }
 
     .card-link__title {
+        margin-left: 0px;
         font-size: 18px;
         width: 85%;
         letter-spacing: 0px;
@@ -2229,10 +2256,60 @@ footer {
         width: 7%;
     }
 
+    .consulting__image {
+        width: 100%;
+        height: auto;
+    }
+
+    .consulting__wrap {
+        background-image: none;
+        margin-top: -100px;
+    }
+
+    .consulting-form-wrap {
+        background-image: url('bg_form-g-mob-1.png');
+        position: static;
+        height: 401px;
+        width: 100%;
+        background-size: cover;
+        background-position-y: initial;
+    }
+
+    .consulting__form-group {
+        padding-top: 70px;
+    }
+
+    .consulting__form {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .consulting__title {
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 30px;
+    }
+
+    .consulting__form-control:nth-child(2) {
+        margin-left: auto;
+    }
+
+    .consulting__form-control, .consulting__button {
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        width: 310px;
+        margin-bottom: 19px;
+    }
+
     .realization__title {
         font-size: 29px;
         margin-bottom: 40px;
         margin-top: 40px;
+    }
+    
+    .realization__button {
+        margin-top: 100px;
     }
 
     .portfolio__title {
@@ -2327,16 +2404,6 @@ footer {
         margin-bottom: 5px;
     }
 
-    .consulting-form-wrap {
-        background-image: url('bg_form-g-mob.png');
-        background-repeat: no-repeat;
-        background-size: auto;
-        background-position-y: bottom;
-        position: static;
-        min-height: 325px;
-        width: 100%;
-    }
-
     .b2b {
         display: flex;
         flex-direction: column;
@@ -2382,9 +2449,46 @@ footer {
         letter-spacing: 0px;
     }
 
+    .functionality-extra {
+        padding-bottom: 100px;
+    }
+
     .functionality__title {
         font-size: 42px;
     }
     
+    .card__number {
+        position: absolute;
+        width: 64px;
+        height: 64px;
+        font-size: 40px;
+        border: 1px solid #223d20;
+        bottom: 3px;
+        left: 10px;
+    }
+
+    .card-link__title {
+        margin-left: 59px;
+    }
+    
+    .consulting__wrap {
+        min-height: 270px;
+    }
+
+    .consulting-form-wrap {
+        height: 250px;
+        width: 70%;
+    }
+
+    .consulting__form {
+        margin-left: 114px;
+        margin-top: 0px;
+    }
+
+    .consulting__title {
+        font-size: 28px;
+        margin-bottom: 20px;
+        margin-top: 15px;    
+    }
 }
 
