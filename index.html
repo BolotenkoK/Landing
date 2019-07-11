@@ -21,48 +21,47 @@
 </head>
 <header> 
     <nav class="navbar navbar-expand-lg">
-
         <a href="" class="navbar-brand">
             <img class="navbar-brand__icon" src="logo_b2bstore.svg" alt="">
         </a>
-
         <!-- Links -->
-        <ul class="navbar-nav collapse navbar-collapse" id="navbarsExample07">
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".top-menu").on("click", "a", function (event) {
+                    event.preventDefault();
+                    var id = $(this).attr('href'),
+                        top = $(id).offset().top;
+                    $('body,html').animate({ scrollTop: top }, 1500);
+                });
+            });
+        </script>
+        <ul class="navbar-nav collapse navbar-collapse top-menu" id="navbarsToggle">
             <li class="nav-item">
-                <a class="nav-link" href="#">О НАС</a>
-
+                <a class="nav-link" href="#about">О НАС</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">УСЛУГИ</a>
-
+                <a class="nav-link" href="#services">УСЛУГИ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">ГАЛЕРЕЯ</a>
-
+                <a class="nav-link" href="#gallery">ГАЛЕРЕЯ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">ФУНКЦИОНАЛ</a>
-
+                <a class="nav-link" href="#functionality">ФУНКЦИОНАЛ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">ПОРТФОЛИО</a>
-
+                <a class="nav-link" href="#portfolio">ПОРТФОЛИО</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">ОТЗЫВЫ</a>
-
+                <a class="nav-link" href="#reviews">ОТЗЫВЫ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">КЛИЕНТЫ</a>
-
+                <a class="nav-link" href="#customers">КЛИЕНТЫ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">КОНТАКТИ</a>
-
+                <a class="nav-link" href="#contacts">КОНТАКТИ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">БЛОГ</a>
-
+                <a class="nav-link" href="#news">БЛОГ</a>
             </li>
         </ul>
         <div class="lang-btn dropdown">
@@ -75,8 +74,8 @@
                 <a class="dropdown-item" href="#">EN</a>
             </div>
         </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
-            aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsToggle"
+            aria-controls="navbarsToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -138,7 +137,7 @@
                     <div class="row mx-auto">
                         <div class="col-12 col-sm-10 mx-auto">
                             <div class="about__logo mx-auto">
-                                <img class="about__logo-img" src="about__logo.png" alt="">
+                                <img class="about__logo-img"  id="about" src="about__logo.png" alt="">
                             </div>
                             <h2 class="about__title">О НАС</h2>
                             <p class="about__text">
@@ -155,6 +154,7 @@
             </div>
         </div>
         <div class="statistics">
+            <img src="top-block.png" alt="" class="statistics__top-img">
             <div class="statistics__wrap">
                 <div class="container">
                     <div class="row mx-auto">
@@ -174,11 +174,11 @@
                         <div class="container-fluid">
                             <div class="row statistics-data__marks">
                                 <div class="statistics-data__mark col-12 col-md-5">
-                                    <img class="statistics-data-icon" src="dislike.png" alt="">
+                                    <img class="statistics-data-icon" src="dislike.svg" alt="">
                                     <span class="statistics-data__mark-point">До внедрения B2B store</span>
                                 </div>
                                 <div class="statistics-data__mark col-12 col-md-5">
-                                    <img class="statistics-data-icon" src="like.png" alt="">
+                                    <img class="statistics-data-icon" src="like.svg" alt="">
                                     <span class="statistics-data__mark-point">После внедрения B2B store</span>
                                 </div>
                             </div>
@@ -338,7 +338,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <div class="services__title-wrap">
+                            <div class="services__title-wrap" id="services">
                                 <h2 class="services__title">
                                     УСЛУГИ
                                 </h2>
@@ -352,243 +352,422 @@
                         </div>
                     </div>
                 </div>
-                <div class="servicees-info-wrap">
-                    <div class="services-info__image-block services-info__image-block_dealers">
-                        <div class="services-info__title">
-                            <h3>Дилерам</h3>
-                            <button class="d-none d-md-block services-info__button services-info__button_hover">
-                                <span> Подробнеe </span>
-                            </button>
+                <div class="servicees-info-block">
+                    <div class="servicees-info-wrap">
+                        <div class="services-info__image-block services-info__image-block_dealers">
+                            <img src="nordwood-themes.jpg" alt="" class="services-info__image-mob">
+                            <div class="services-info__title">
+                                <h3>Дилерам</h3>
+                                <button class="services-info__button services-info__button_hover">
+                                    <span> Подробнеe </span>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="services-info">
-                        <script>
-                            function MarginLeftFunc() {
-                                if($(window).width() > 768) {
-                                    var elements = document.getElementsByClassName('services-info__item_dealers');
-                                    var i, marginLeft = 40;
+                        <div class="services-info">
+                            <script>
+                                function MarginLeftFunc() {
+                                    if($(window).width() > 768) {
+                                        var elements = document.getElementsByClassName('services-info__item_dealers');
+                                        var i, marginLeft = 20;
 
-                                    for (i = 0; i < elements.length; i++) {
-                                        marginLeft += parseInt(window.getComputedStyle(elements[i]).marginLeft, 10) + 20;
-                                        elements[i].style.marginLeft = marginLeft + 'px';
+                                        for (i = 0; i < elements.length; i++) {
+                                            marginLeft += parseInt(window.getComputedStyle(elements[i]).marginLeft, 10) + 20;
+                                            elements[i].style.marginLeft = marginLeft + 'px';
+                                        }
+                                    } else { 
+                                        document.getElementsByClassName('services-info__item_dealers').style.marginLeft = 0;
                                     }
-                                } else { 
-                                    document.getElementsByClassName('services-info__item_dealers').style.marginLeft = 0;
                                 }
-                            }
-                            window.addEventListener('load', MarginLeftFunc, false);
-                        </script>
-                        <ul class="services-info__items">
-                            <li class="services-info__item services-info__item_dealers">
-                                <img src="icons_uslugi/003-shipping-and-delivery.svg" alt=""
-                                    class="services-info__icon">
-                                <span class="services-info__item-text">Доступ к актуальной информации 24/7</span>
-                            </li>
-                            <li class="services-info__item services-info__item_dealers">
-                                <img src="icons_uslugi/001-discount.svg" alt="" class="services-info__icon">
-                                <span class="services-info__item-text">Персональные цены и торговые условия</span>
-                            </li>
-                            <li class="services-info__item services-info__item_dealers">
-                                <img src="icons_uslugi/diagram.svg" alt="" class="services-info__icon">
-                                <span class="services-info__item-text">Кредитный лимит и отсрочка платежа</span>
-                            </li>
-                            <li class="services-info__item services-info__item_dealers">
-                                <img src="icons_uslugi/009-atm.svg" alt="" class="services-info__icon">
-                                <span class="services-info__item-text">Автовыставление счета</span>
-                            </li>
-                            <li class="services-info__item services-info__item_dealers">
-                                <img src="icons_uslugi/013-responsive-1.svg" alt="" class="services-info__icon">
-                                <span class="services-info__item-text">Адаптивный дизайн</span>
-                            </li>
-                            <li class="services-info__item services-info__item_dealers">
-                                <img src="icons_uslugi/api-page.svg" alt="" class="services-info__icon">
-                                <span class="services-info__item-text">Интеграция по АРI</span>
-                            </li>
-                        </ul>
-                        <button class="d-block d-md-none services-info__button services-info__button_hover">
-                            <span> Подробнеe </span>
-                        </button>
-                    </div>
-                </div>
-                <div class="servicees-info-wrap">
-                    <div class="services-info__image-block services-info__image-block_document">
-                        <div class="services-info__title">
-                            <h3>Документооборот</h3>
-                            <button class="d-none d-md-block services-info__button services-info__button_hover">
-                                <span> Подробнеe </span>
-                            </button>
+                                window.addEventListener('load', MarginLeftFunc, false);
+                            </script>
+                            <ul class="services-info__items">
+                                <li class="services-info__item services-info__item_dealers">
+                                    <img src="icons_uslugi/003-shipping-and-delivery.svg" alt=""
+                                        class="services-info__icon">
+                                    <span class="services-info__item-text">Доступ к актуальной информации 24/7</span>
+                                </li>
+                                <li class="services-info__item services-info__item_dealers">
+                                    <img src="icons_uslugi/001-discount.svg" alt="" class="services-info__icon">
+                                    <span class="services-info__item-text">Персональные цены и торговые условия</span>
+                                </li>
+                                <li class="services-info__item services-info__item_dealers">
+                                    <img src="icons_uslugi/diagram.svg" alt="" class="services-info__icon">
+                                    <span class="services-info__item-text">Кредитный лимит и отсрочка платежа</span>
+                                </li>
+                                <li class="services-info__item services-info__item_dealers">
+                                    <img src="icons_uslugi/009-atm.svg" alt="" class="services-info__icon">
+                                    <span class="services-info__item-text">Автовыставление счета</span>
+                                </li>
+                                <li class="services-info__item services-info__item_dealers">
+                                    <img src="icons_uslugi/013-responsive-1.svg" alt="" class="services-info__icon">
+                                    <span class="services-info__item-text">Адаптивный дизайн</span>
+                                </li>
+                                <li class="services-info__item services-info__item_dealers">
+                                    <img src="icons_uslugi/api-page.svg" alt="" class="services-info__icon">
+                                    <span class="services-info__item-text">Интеграция по АРI</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="services-info">
-                        <script>
-                            function MarginLeftFunc() {
-                                if ($(window).width() > 768) {
-                                    var elements = document.getElementsByClassName('services-info__item_document');
-                                    var i, marginLeft = 40;
-
-                                    for (i = 0; i < elements.length; i++) {
-                                        marginLeft += parseInt(window.getComputedStyle(elements[i]).marginLeft, 10) + 20;
-                                        elements[i].style.marginLeft = marginLeft + 'px';
-                                    }
-                                } else {
-                                    document.getElementsByClassName('services-info__item_document').style.marginLeft = 0;
-                                }
-                            }
-                            window.addEventListener('load', MarginLeftFunc, false);
-                        </script>
-                        <ul class="services-info__items">
-                            <li class="services-info__item services-info__item_document">
-                                <img src="icons_uslugi/folder.svg" alt=""
-                                    class="services-info__icon">
-                                <span class="services-info__item-text">
-                                    Доступ к п  олному пакету документов (счета, расходные, 
-                                    возвратные, налоговые накладные и т.д.)</span>
-                            </li>
-                            <li class="services-info__item services-info__item_document">
-                                <img src="icons_uslugi/debet.svg" alt="" class="services-info__icon">
-                                <span class="services-info__item-text">
-                                    Расшифровка дебиторки (общей и просроченной) с точностью до документа
-                                </span>
-                            </li>
-                            <li class="services-info__item services-info__item_document">
-                                <img src="icons_uslugi/analytics.svg" alt="" class="services-info__icon">
-                                <span class="services-info__item-text">
-                                    Формирование отчетности (акт взаиморасчетов и т.д.)
-                                </span>
-                            </li>
-                        </ul>
-                        <button class="d-block d-md-none services-info__button services-info__button_hover">
-                            <span> Подробнеe </span>
-                        </button>
-                    </div>
-                </div>
-                <div class="servicees-info-wrap">
-                    <div class="services-info__image-block services-info__image-block_staff">
-                        <div class="services-info__title">
-                            <h3>Персоналу</h3>
-                            <button class="d-none d-md-block services-info__button services-info__button_hover">
-                                <span> Подробнее </span>
-                            </button>
+                    <div class="servicees-info-wrap">
+                        <div class="services-info__image-block services-info__image-block_document">
+                            <img src="2.jpg" alt="" class="services-info__image-mob">
+                            <div class="services-info__title">
+                                <h3>Документооборот</h3>
+                                <button class="services-info__button services-info__button_hover">
+                                    <span> Подробнеe </span>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="services-info">
-                        <script>
-                            function MarginLeftFunc() {
-                                if ($(window).width() > 768) {
-                                    var elements = document.getElementsByClassName('services-info__item_staff');
-                                    var i, marginLeft = 40;
-
-                                    for (i = 0; i < elements.length; i++) {
-                                        marginLeft += parseInt(window.getComputedStyle(elements[i]).marginLeft, 10) + 20;
-                                        elements[i].style.marginLeft = marginLeft + 'px';
-                                    }
-                                } else {
-                                    document.getElementsByClassName('services-info__item_staff').style.marginLeft = 0;
-                                }
-                            }
-                            window.addEventListener('load', MarginLeftFunc, false);
-                        </script>
-                        <ul class="services-info__items">
-                            <li class="services-info__item services-info__item_staff">
-                                <img src="icons_uslugi/kettlebell.svg" alt=""
-                                    class="services-info__icon">
-                                <span class="services-info__item-text">
-                                    Снижение нагрузки
-                                </span>
-                            </li>
-                            <li class="services-info__item services-info__item_staff">
-                                <img src="icons_uslugi/no-waiting.svg" alt="" class="services-info__icon">
-                                <span class="services-info__item-text">
-                                    Отсутствие уточняющих вопросов по ценам и
-                                    остаткам на складе
-                                </span>
-                            </li>
-                            <li class="services-info__item services-info__item_staff">
-                                <img src="icons_uslugi/robot.svg" alt="" class="services-info__icon">
-                                <span class="services-info__item-text">
-                                    Автоматизация рутинной работы
-                                </span>
-                            </li>
-                            <li class="services-info__item services-info__item_staff">
-                                <img src="icons_uslugi/energy.svg" alt="" class="services-info__icon">
-                                <span class="services-info__item-text">
-                                    Исключение потери данных и ошибок в документе
-                                </span>
-                            </li>
-                            <li class="services-info__item services-info__item_staff">
-                                <img src="icons_uslugi/time.svg" alt="" class="services-info__icon">
-                                <span class="services-info__item-text">
-                                    Эффективное использование времени
-                                </span>
-                            </li>
-                        </ul>
-                        <button class="d-block d-md-none services-info__button services-info__button_hover">
-                            <span> Подробнеe </span>
-                        </button>
-                    </div>
-                </div>
-                <div class="servicees-info-wrap">
-                    <div class="services-info__image-block services-info__image-block_service">
-                        <div class="services-info__title">
-                            <h3>Сервис</h3>
-                            <button class="d-none d-md-block services-info__button services-info__button_hover">
-                                <span> Подробнеe </span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="services-info">
-                        <ul class="services-info__items">
+                        <div class="services-info">
                             <script>
                                 function MarginLeftFunc() {
                                     if ($(window).width() > 768) {
-                                        var elements = document.getElementsByClassName('services-info__item_service');
-                                        var i, marginLeft = 40;
+                                        var elements = document.getElementsByClassName('services-info__item_document');
+                                        var i, marginLeft = 20;
+
+                                        for (i = 0; i < elements.length; i++) {
+                                            marginLeft += parseInt(window.getComputedStyle(elements[i]).marginLeft, 10) + 30;
+                                            elements[i].style.marginLeft = marginLeft + 'px';
+                                        }
+                                    } else {
+                                        document.getElementsByClassName('services-info__item_document').style.marginLeft = 0;
+                                    }
+                                }
+                                window.addEventListener('load', MarginLeftFunc, false);
+                            </script>
+                            <ul class="services-info__items">
+                                <li class="services-info__item services-info__item_document">
+                                    <img src="icons_uslugi/folder.svg" alt=""
+                                        class="services-info__icon">
+                                    <span class="services-info__item-text">
+                                        Доступ к п  олному пакету документов (счета, расходные, 
+                                        возвратные, налоговые накладные и т.д.)</span>
+                                </li>
+                                <li class="services-info__item services-info__item_document">
+                                    <img src="icons_uslugi/debt.svg" alt="" class="services-info__icon">
+                                    <span class="services-info__item-text">
+                                        Расшифровка дебиторки (общей и просроченной) с точностью до документа
+                                    </span>
+                                </li>
+                                <li class="services-info__item services-info__item_document">
+                                    <img src="icons_uslugi/folder.svg" alt="" class="services-info__icon">
+                                    <span class="services-info__item-text">
+                                        Формирование отчетности (акт взаиморасчетов и т.д.)
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="servicees-info-wrap">
+                        <div class="services-info__image-block services-info__image-block_staff">
+                            <img src="nordwood-themes.jpg" alt="" class="services-info__image-mob">
+                            <div class="services-info__title">
+                                <h3>Персоналу</h3>
+                                <button class="services-info__button services-info__button_hover">
+                                    <span> Подробнее </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="services-info">
+                            <script>
+                                function MarginLeftFunc() {
+                                    if ($(window).width() > 768) {
+                                        var elements = document.getElementsByClassName('services-info__item_staff');
+                                        var i, marginLeft = 20;
 
                                         for (i = 0; i < elements.length; i++) {
                                             marginLeft += parseInt(window.getComputedStyle(elements[i]).marginLeft, 10) + 20;
                                             elements[i].style.marginLeft = marginLeft + 'px';
                                         }
                                     } else {
-                                        document.getElementsByClassName('services-info__item_service').style.marginLeft = 0;
+                                        document.getElementsByClassName('services-info__item_staff').style.marginLeft = 0;
                                     }
                                 }
                                 window.addEventListener('load', MarginLeftFunc, false);
                             </script>
-                            <li class="services-info__item services-info__item_service">
-                                <img src="icons_uslugi/cursor.svg" alt=""
-                                    class="services-info__icon">
-                                <span class="services-info__item-text">
-                                    Абсолютно другой взгляд на качество обслуживания!
-                                </span>
-                            </li>
-                            <li class="services-info__item services-info__item_service">
-                                <img src="icons_uslugi/black-laptop.svg" alt="" class="services-info__icon">
-                                <span class="services-info__item-text">
-                                    Современный подход к бизнесу в b2b сегменте
-                                </span>
-                            </li>
-                            <li class="services-info__item services-info__item_service">
-                                <img src="icons_uslugi/icon.svg" alt="" class="services-info__icon">
-                                <span class="services-info__item-text">
-                                    Простое взаимодействие поставщика с клиентом
-                                </span>
-                            </li>
-                            <li class="services-info__item services-info__item_service">
-                                <img src="icons_uslugi/covered-food-tray-on-a-hand-of-hotel-room-service.svg" alt="" class="services-info__icon">
-                                <span class="services-info__item-text">
-                                    Постпродажный сервис и конкурентное преимущество
-                                </span>
-                            </li>
-                            <li class="services-info__item services-info__item_service">
-                                <img src="icons_uslugi/growth.svg" alt="" class="services-info__icon">
-                                <span class="services-info__item-text">
-                                    Рост уровня лояльности
-                                </span>
-                            </li>
-                        </ul>
-                        <button class="d-block d-md-none services-info__button services-info__button_hover">
-                            <span> Подробнеe </span>
-                        </button>
+                            <ul class="services-info__items">
+                                <li class="services-info__item services-info__item_staff">
+                                    <img src="icons_uslugi/kettlebell.svg" alt=""
+                                        class="services-info__icon">
+                                    <span class="services-info__item-text">
+                                        Снижение нагрузки
+                                    </span>
+                                </li>
+                                <li class="services-info__item services-info__item_staff">
+                                    <img src="icons_uslugi/no-waiting.svg" alt="" class="services-info__icon">
+                                    <span class="services-info__item-text">
+                                        Отсутствие уточняющих вопросов по ценам и
+                                        остаткам на складе
+                                    </span>
+                                </li>
+                                <li class="services-info__item services-info__item_staff">
+                                    <img src="icons_uslugi/robot.svg" alt="" class="services-info__icon">
+                                    <span class="services-info__item-text">
+                                        Автоматизация рутинной работы
+                                    </span>
+                                </li>
+                                <li class="services-info__item services-info__item_staff">
+                                    <img src="icons_uslugi/energy.svg" alt="" class="services-info__icon">
+                                    <span class="services-info__item-text">
+                                        Исключение потери данных и ошибок в документе
+                                    </span>
+                                </li>
+                                <li class="services-info__item services-info__item_staff">
+                                    <img src="icons_uslugi/time.svg" alt="" class="services-info__icon">
+                                    <span class="services-info__item-text">
+                                        Эффективное использование времени
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="servicees-info-wrap">
+                        <div class="services-info__image-block services-info__image-block_service">
+                            <img src="nordwood-themes.jpg" alt="" class="services-info__image-mob">
+                            <div class="services-info__title">
+                                <h3>Сервис</h3>
+                                <button class="services-info__button services-info__button_hover">
+                                    <span> Подробнеe </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="services-info">
+                            <ul class="services-info__items">
+                                <script>
+                                    function MarginLeftFunc() {
+                                        if ($(window).width() > 768) {
+                                            var elements = document.getElementsByClassName('services-info__item_service');
+                                            var i, marginLeft = 20;
+
+                                            for (i = 0; i < elements.length; i++) {
+                                                marginLeft += parseInt(window.getComputedStyle(elements[i]).marginLeft, 10) + 20;
+                                                elements[i].style.marginLeft = marginLeft + 'px';
+                                            }
+                                        } else {
+                                            document.getElementsByClassName('services-info__item_service').style.marginLeft = 0;
+                                        }
+                                    }
+                                    window.addEventListener('load', MarginLeftFunc, false);
+                                </script>
+                                <li class="services-info__item services-info__item_service">
+                                    <img src="icons_uslugi/cursor.svg" alt=""
+                                        class="services-info__icon">
+                                    <span class="services-info__item-text">
+                                        Абсолютно другой взгляд на качество обслуживания!
+                                    </span>
+                                </li>
+                                <li class="services-info__item services-info__item_service">
+                                    <img src="icons_uslugi/black-laptop.svg" alt="" class="services-info__icon">
+                                    <span class="services-info__item-text">
+                                        Современный подход к бизнесу в b2b сегменте
+                                    </span>
+                                </li>
+                                <li class="services-info__item services-info__item_service">
+                                    <img src="icons_uslugi/icon.svg" alt="" class="services-info__icon">
+                                    <span class="services-info__item-text">
+                                        Простое взаимодействие поставщика с клиентом
+                                    </span>
+                                </li>
+                                <li class="services-info__item services-info__item_service">
+                                    <img src="icons_uslugi/covered-food-tray-on-a-hand-of-hotel-room-service.svg" alt="" class="services-info__icon">
+                                    <span class="services-info__item-text">
+                                        Постпродажный сервис и конкурентное преимущество
+                                    </span>
+                                </li>
+                                <li class="services-info__item services-info__item_service">
+                                    <img src="icons_uslugi/growth.svg" alt="" class="services-info__icon">
+                                    <span class="services-info__item-text">
+                                        Рост уровня лояльности
+                                    </span>
+                                </li>
+                            </ul>
+                            <button class="d-block d-md-none services-info__button services-info__button_hover">
+                                <span> Подробнеe </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="servicesCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#servicesCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#servicesCarousel" data-slide-to="1"></li>
+                        <li data-target="#servicesCarousel" data-slide-to="2"></li>
+                        <li data-target="#servicesCarousel" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="servicees-info-wrap">
+                                <div class="services-info__image-block services-info__image-block_dealers">
+                                    <img src="nordwood-themes.jpg" alt="" class="services-info__image-mob">
+                                    <div class="services-info__title">
+                                        <h3>Дилерам</h3>
+                                    </div>
+                                </div>
+                                <div class="services-info">
+                                    <ul class="services-info__items">
+                                        <li class="services-info__item services-info__item_dealers">
+                                            <img src="icons_uslugi/003-shipping-and-delivery.svg" alt="" class="services-info__icon">
+                                            <span class="services-info__item-text">Доступ к актуальной информации 24/7</span>
+                                        </li>
+                                        <li class="services-info__item services-info__item_dealers">
+                                            <img src="icons_uslugi/001-discount.svg" alt="" class="services-info__icon">
+                                            <span class="services-info__item-text">Персональные цены и торговые условия</span>
+                                        </li>
+                                        <li class="services-info__item services-info__item_dealers">
+                                            <img src="icons_uslugi/diagram.svg" alt="" class="services-info__icon">
+                                            <span class="services-info__item-text">Кредитный лимит и отсрочка платежа</span>
+                                        </li>
+                                        <li class="services-info__item services-info__item_dealers">
+                                            <img src="icons_uslugi/009-atm.svg" alt="" class="services-info__icon">
+                                            <span class="services-info__item-text">Автовыставление счета</span>
+                                        </li>
+                                        <li class="services-info__item services-info__item_dealers">
+                                            <img src="icons_uslugi/013-responsive-1.svg" alt="" class="services-info__icon">
+                                            <span class="services-info__item-text">Адаптивный дизайн</span>
+                                        </li>
+                                        <li class="services-info__item services-info__item_dealers">
+                                            <img src="icons_uslugi/api-page.svg" alt="" class="services-info__icon">
+                                            <span class="services-info__item-text">Интеграция по АРI</span>
+                                        </li>
+                                    </ul>
+                                    <button class="services-info__button services-info__button_hover">
+                                        <span> Подробнеe </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="servicees-info-wrap">
+                                <div class="services-info__image-block services-info__image-block_document">
+                                    <img src="doc.jpg" alt="" class="services-info__image-mob">
+                                    <div class="services-info__title">
+                                        <h3>Документооборот</h3>
+                                    </div>
+                                </div>
+                                <div class="services-info">
+                                    <ul class="services-info__items">
+                                        <li class="services-info__item services-info__item_document">
+                                            <img src="icons_uslugi/folder.svg" alt="" class="services-info__icon">
+                                            <span class="services-info__item-text">
+                                                Доступ к п олному пакету документов (счета, расходные,
+                                                возвратные, налоговые накладные и т.д.)</span>
+                                        </li>
+                                        <li class="services-info__item services-info__item_document">
+                                            <img src="icons_uslugi/debt.svg" alt="" class="services-info__icon">
+                                            <span class="services-info__item-text">
+                                                Расшифровка дебиторки (общей и просроченной) с точностью до документа
+                                            </span>
+                                        </li>
+                                        <li class="services-info__item services-info__item_document">
+                                            <img src="icons_uslugi/folder.svg" alt="" class="services-info__icon">
+                                            <span class="services-info__item-text">
+                                                Формирование отчетности (акт взаиморасчетов и т.д.)
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <button class="services-info__button services-info__button_hover">
+                                        <span> Подробнеe </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="servicees-info-wrap">
+                                <div class="services-info__image-block services-info__image-block_staff">
+                                    <img src="2.jpg" alt="" class="services-info__image-mob">
+                                    <div class="services-info__title">
+                                        <h3>Персоналу</h3>
+                                    </div>
+                                </div>
+                                <div class="services-info">
+                                    <ul class="services-info__items">
+                                        <li class="services-info__item services-info__item_staff">
+                                            <img src="icons_uslugi/kettlebell.svg" alt="" class="services-info__icon">
+                                            <span class="services-info__item-text">
+                                                Снижение нагрузки
+                                            </span>
+                                        </li>
+                                        <li class="services-info__item services-info__item_staff">
+                                            <img src="icons_uslugi/no-waiting.svg" alt="" class="services-info__icon">
+                                            <span class="services-info__item-text">
+                                                Отсутствие уточняющих вопросов по ценам и
+                                                остаткам на складе
+                                            </span>
+                                        </li>
+                                        <li class="services-info__item services-info__item_staff">
+                                            <img src="icons_uslugi/robot.svg" alt="" class="services-info__icon">
+                                            <span class="services-info__item-text">
+                                                Автоматизация рутинной работы
+                                            </span>
+                                        </li>
+                                        <li class="services-info__item services-info__item_staff">
+                                            <img src="icons_uslugi/energy.svg" alt="" class="services-info__icon">
+                                            <span class="services-info__item-text">
+                                                Исключение потери данных и ошибок в документе
+                                            </span>
+                                        </li>
+                                        <li class="services-info__item services-info__item_staff">
+                                            <img src="icons_uslugi/time.svg" alt="" class="services-info__icon">
+                                            <span class="services-info__item-text">
+                                                Эффективное использование времени
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <button class="services-info__button services-info__button_hover">
+                                        <span> Подробнеe </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="servicees-info-wrap">
+                                <div class="services-info__image-block services-info__image-block_service">
+                                    <img src="serv.jpg" alt="" class="services-info__image-mob">
+                                    <div class="services-info__title">
+                                        <h3>Сервис</h3>
+                                    </div>
+                                </div>
+                                <div class="services-info">
+                                    <ul class="services-info__items">
+                                        <li class="services-info__item services-info__item_service">
+                                            <img src="icons_uslugi/cursor.svg" alt="" class="services-info__icon">
+                                            <span class="services-info__item-text">
+                                                Абсолютно другой взгляд на качество обслуживания!
+                                            </span>
+                                        </li>
+                                        <li class="services-info__item services-info__item_service">
+                                            <img src="icons_uslugi/black-laptop.svg" alt="" class="services-info__icon">
+                                            <span class="services-info__item-text">
+                                                Современный подход к бизнесу в b2b сегменте
+                                            </span>
+                                        </li>
+                                        <li class="services-info__item services-info__item_service">
+                                            <img src="icons_uslugi/icon.svg" alt="" class="services-info__icon">
+                                            <span class="services-info__item-text">
+                                                Простое взаимодействие поставщика с клиентом
+                                            </span>
+                                        </li>
+                                        <li class="services-info__item services-info__item_service">
+                                            <img src="icons_uslugi/covered-food-tray-on-a-hand-of-hotel-room-service.svg" alt=""
+                                                class="services-info__icon">
+                                            <span class="services-info__item-text">
+                                                Постпродажный сервис и конкурентное преимущество
+                                            </span>
+                                        </li>
+                                        <li class="services-info__item services-info__item_service">
+                                            <img src="icons_uslugi/growth.svg" alt="" class="services-info__icon">
+                                            <span class="services-info__item-text">
+                                                Рост уровня лояльности
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <button class="services-info__button services-info__button_hover">
+                                        <span> Подробнеe </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -597,7 +776,7 @@
             <div class="functionality__block">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-12 offset-sm-2 col-sm-10 functionality__title-block">
+                        <div class="col-12 offset-sm-2 col-sm-10 functionality__title-block" id="functionality">
                             <h2 class="functionality__title">
                                 БАЗОВАЯ ФУНКЦИОНЛЬНОСТЬ
                             </h2>
@@ -653,16 +832,10 @@
             <div class="gallery__wrap">
                 <div class="container">
                     <div class="row">
-                        <h2 class="gallery__title mx-auto">
+                        <h2 class="gallery__title mx-auto" id="gallery">
                             ГАЛЕРЕЯ ПРОГРАММНОГО ПРОДУКТА
                         </h2>
                     </div>
-                    <!-- <script type="text/javascript">
-                        function toggle_visibility(id) {
-                            var e = document.getElementById(id);
-                            e.style.display = ((e.style.display != 'none') ? 'none' : 'block');
-                        }
-                    </script> -->
                     <div class="row">
                         <div class="col-12 col-md-5">
                             <ul class="gallery-categories">
@@ -718,6 +891,7 @@
                     </div>
                 </div>
             </div>
+            <img src="bott-block.png" alt="" class="gallery__icon-bottom">
         </div>
         <div class="functionality-extra">
             <div class="functionality-extra__wrap">
@@ -743,13 +917,24 @@
                                                 Telegram bot <img class="card-link__icon" src="telegram.svg">
                                             </p>
                                             <button class="card__show-btn">
-                                                <i class="fa fa-angle-down"></i>
+                                                <span class="arrow-down"></span>
                                             </button>
                                         </a>
                                     </div>
                                     <div id="collapse1" class="collapse show" data-parent="#accordion">
                                         <div class="card-body">
                                             <img class="card-body__image" src="CATALOG_analogi.jpg" alt="">
+                                            <div class="card-body__text">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                                Perspiciatis labore, vero quo voluptate accusamus numquam 
+                                                quisquam porro earum quos? Amet ipsam eius 
+                                                ducimus molestias placeat non aperiam ad, eos sequi!
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                                Perspiciatis labore, vero quo voluptate accusamus numquam 
+                                                quisquam porro earum quos? Amet ipsam eius 
+                                                ducimus molestias placeat non aperiam ad, eos sequi!
+                                            </div>
+                                            <div class="card-body__rubric"> Рубрикатор, по категориям </div>
                                             <div class="card-body__links">
                                                 Примеры работ готовых промоблоков.
                                                 <a href="" class="card-body__link">
@@ -760,7 +945,7 @@
                                                 </a>
                                             </div>
                                             <button class="card-body__button" data-toggle="collapse" href="#collapse1">
-                                                <i class="fa fa-angle-down"></i>
+                                                <span class="arrow-down"></span>
                                             </button>
                                         </div>
                                     </div>
@@ -775,7 +960,7 @@
                                                 Промо блок
                                             </p>
                                             <button class="card__show-btn">
-                                                <i class="fa fa-angle-down"></i>
+                                                <span class="arrow-down"></span>
                                             </button>
                                         </a>
                                     </div>
@@ -783,7 +968,7 @@
                                         <div class="card-body">
                                             Lorem ipsum..
                                             <button class="card-body__button" data-toggle="collapse" href="#collapse2">
-                                                <i class="fa fa-angle-down"></i>
+                                                <span class="arrow-down"></span>
                                             </button>
                                         </div>
                                     </div>
@@ -798,7 +983,7 @@
                                                 Публичная часть
                                             </p>
                                             <button class="card__show-btn">
-                                                <i class="fa fa-angle-down"></i>
+                                                <span class="arrow-down"></span>
                                             </button>
                                         </a>
                                     </div>
@@ -806,7 +991,7 @@
                                         <div class="card-body">
                                             Lorem ipsum..
                                             <button class="card-body__button" data-toggle="collapse" href="#collapse3">
-                                                <i class="fa fa-angle-down"></i>
+                                                <span class="arrow-down"></span>
                                             </button>
                                         </div>
                                     </div>
@@ -821,7 +1006,7 @@
                                                 Е-commerce на публичную часть
                                             </p>
                                             <button class="card__show-btn">
-                                                <i class="fa fa-angle-down"></i>
+                                                <span class="arrow-down"></span>
                                             </button>
                                         </a>
                                     </div>
@@ -829,7 +1014,7 @@
                                         <div class="card-body">
                                             Lorem ipsum..
                                             <button class="card-body__button" data-toggle="collapse" href="#collapse4">
-                                                <i class="fa fa-angle-down"></i>
+                                                <span class="arrow-down"></span>
                                             </button>
                                         </div>
                                     </div>
@@ -844,7 +1029,7 @@
                                                 Индивидуальный дизайн
                                             </p>
                                             <button class="card__show-btn">
-                                                <i class="fa fa-angle-down"></i>
+                                                <span class="arrow-down"></span>
                                             </button>
                                         </a>
                                     </div>
@@ -852,7 +1037,7 @@
                                         <div class="card-body">
                                             Lorem ipsum..
                                             <button class="card-body__button" data-toggle="collapse" href="#collapse5">
-                                                <i class="fa fa-angle-down"></i>
+                                                <span class="arrow-down"></span>
                                             </button>
                                         </div>
                                     </div>
@@ -1281,7 +1466,7 @@
         <div class="portfolio">                        
             <div class="container-fluid">
                 <div class="row">
-                    <h2 class="portfolio__title mx-auto">
+                    <h2 class="portfolio__title mx-auto" id="portfolio">
                         ПОРТФОЛИО
                     </h2>
                 </div>
@@ -1426,7 +1611,7 @@
         <div class="reviews">
             <div class="container-fluid">
                 <div class="row">
-                    <h2 class="reviews__title mx-auto">
+                    <h2 class="reviews__title mx-auto" id="reviews">
                         ОТЗЫВЫ КЛИЕНТОВ
                     </h2>
                 </div>
@@ -1559,7 +1744,7 @@
         <div class="customers">
             <div class="container-fluid">
                 <div class="row">
-                    <h2 class="customers__title mx-auto">
+                    <h2 class="customers__title mx-auto" id="customers">
                         НАШИ КЛИЕНТЫ
                     </h2>
                 </div>
@@ -1832,7 +2017,7 @@
         <div class="news-block">
             <div class="container-fluid">
                 <div class="row">
-                    <h2 class="news-block__title mx-auto">
+                    <h2 class="news-block__title mx-auto" id="news">
                         НОВОСТИ
                     </h2>
                 </div>
@@ -1902,7 +2087,7 @@
     </main>
 </body>
 <footer>
-    <div class="container">
+    <div class="container" id="contacts">
         <div class="row">
             <div class="col-12 col-sm-6 col-lg-2">
                 <div class="b2b">
@@ -1915,7 +2100,7 @@
             <div class="col-12 col-lg-1 d-block d-sm-none d-lg-block footer__line-wrap">
                <hr class="footer__line">
             </div>
-            <div class="col-12 col-sm-6 col-lg-2">
+            <div class="col-12 col-sm-6 mt-sm-5 mt-lg-0 col-lg-2">
                 <div class="zet-web">
                     <img class="zet-web__logo" src="about__logo.png" alt="">
                 </div>
@@ -1924,7 +2109,7 @@
                 <div class="footer-contacts">
                     <div class="footer-contacts__address">
                         <a href="#">
-                            <img class="footer-contacts__img" src="placeholder.svg" alt="">
+                            <img class="footer-contacts__img" src="maps-and-flags.svg" alt="">
                             <span class="footer-contacts__caption">
                                 Укрина, Киев, 
                                 пер. Куреневский, 15 
@@ -1933,7 +2118,7 @@
                     </div>
                     <div class="footer-contacts__mail-block">
                         <a href="">
-                            <img class="footer-contacts__img" src="white-mail.svg" alt="">
+                            <img class="footer-contacts__img" src="envelope.svg" alt="">
                             <span class="footer-contacts__caption">
                                 dm.ozhina@zetweb.com.ua
                             </span>
@@ -1941,7 +2126,7 @@
                     </div>
                     <div class="footer-contacts__phone-block">
                         <a href="#">
-                            <img class="footer-contacts__img" src="phone-receiver.svg" alt="">
+                            <img class="footer-contacts__img" src="call-answer.svg" alt="">
                             <span class="footer-contacts__caption">
                                 +38 (097)-57-57-083
                             </span>
