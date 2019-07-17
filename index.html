@@ -201,8 +201,27 @@
                                 <h2 class="statistics__title">
                                     Эффективность работы доказана!
                                 </h2>
+                                <script>
+                                    $(function () {
+                                        var target_block = $(".statistics__projects"); 
+                                        var blockStatus = true;
+                                        $(window).scroll(function () {
+                                            var scrollEvent = ($(window).scrollTop() > (target_block.position().top - $(window).height()));
+                                            if (scrollEvent && blockStatus) {
+                                                blockStatus = false; 
+                                                $({ numberValue: 0 }).animate({ numberValue: 30 }, {
+                                                    duration: 2500,
+                                                    easing: "linear",
+                                                    step: function (val) {
+                                                        $(".statistics__projects").html(Math.ceil(val)); 
+                                                    }
+                                                });
+                                            }
+                                        });
+                                    });
+                                </script>
                                 <p class="statistics__title-caption">
-                                    <span class="statistics__projects"> 30 </span>
+                                    <span class="statistics__projects"> 0 </span>
                                     B2B порталов разработано уже
                                 </p>
                             </div>
@@ -955,7 +974,7 @@
                                                 Telegram bot <img class="card-link__icon" src="telegram.svg">
                                             </p>
                                             <button class="card__show-btn">
-                                                <span class="arrow-down"></span>
+                                                
                                             </button>
                                         </a>
                                     </div>
@@ -982,8 +1001,7 @@
                                                     http://autotm.by/ru/catalog/public
                                                 </a>
                                             </div>
-                                            <button class="card-body__button" data-toggle="collapse" href="#collapse1">
-                                                <span class="arrow-down"></span>
+                                            <button class="card-body__button" data-toggle="collapse" href="#collapse1">   
                                             </button>
                                         </div>
                                     </div>
@@ -998,16 +1016,13 @@
                                                 Промо блок
                                             </p>
                                             <button class="card__show-btn">
-                                                <span class="arrow-down"></span>
                                             </button>
                                         </a>
                                     </div>
                                     <div id="collapse2" class="collapse" data-parent="#accordion">
                                         <div class="card-body">
                                             Lorem ipsum..
-                                            <button class="card-body__button" data-toggle="collapse" href="#collapse2">
-                                                <span class="arrow-down"></span>
-                                            </button>
+                                            <button class="card-body__button" data-toggle="collapse" href="#collapse2"></button>
                                         </div>
                                     </div>
                                 </div>
@@ -1021,7 +1036,6 @@
                                                 Публичная часть
                                             </p>
                                             <button class="card__show-btn">
-                                                <span class="arrow-down"></span>
                                             </button>
                                         </a>
                                     </div>
@@ -1029,7 +1043,6 @@
                                         <div class="card-body">
                                             Lorem ipsum..
                                             <button class="card-body__button" data-toggle="collapse" href="#collapse3">
-                                                <span class="arrow-down"></span>
                                             </button>
                                         </div>
                                     </div>
@@ -1044,7 +1057,6 @@
                                                 Е-commerce на публичную часть
                                             </p>
                                             <button class="card__show-btn">
-                                                <span class="arrow-down"></span>
                                             </button>
                                         </a>
                                     </div>
@@ -1052,7 +1064,6 @@
                                         <div class="card-body">
                                             Lorem ipsum..
                                             <button class="card-body__button" data-toggle="collapse" href="#collapse4">
-                                                <span class="arrow-down"></span>
                                             </button>
                                         </div>
                                     </div>
@@ -1067,7 +1078,6 @@
                                                 Индивидуальный дизайн
                                             </p>
                                             <button class="card__show-btn">
-                                                <span class="arrow-down"></span>
                                             </button>
                                         </a>
                                     </div>
@@ -1075,7 +1085,6 @@
                                         <div class="card-body">
                                             Lorem ipsum..
                                             <button class="card-body__button" data-toggle="collapse" href="#collapse5">
-                                                <span class="arrow-down"></span>
                                             </button>
                                         </div>
                                     </div>
@@ -1789,88 +1798,86 @@
             </div>
             <div class="container customers-block">
                 <div class="row">
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-2">
                         <div class="customer">
                             <a class="customer__logo-wrap" href="#">
                                 <img src="torsion_group.png" alt="" class="customer__logo">
                             </a>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-2">
                         <div class="customer">
                             <a class="customer__logo-wrap" href="#">
                                 <img src="bts.png" alt="" class="customer__logo">
                             </a>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-2">
                         <div class="customer">
                             <a class="customer__logo-wrap" href="#">
                                 <img src="atm.png" alt="" class="customer__logo">
                             </a>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-2">
                         <div class="customer">
                             <a class="customer__logo-wrap" href="#">
                                 <img src="Nano.png" alt="" class="customer__logo">
                             </a>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-2">
                         <div class="customer">
                             <a class="customer__logo-wrap" href="#">
                                 <img src="xl_group2.png" alt="" class="customer__logo">
                             </a>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-2">
                         <div class="customer">
                             <a class="customer__logo-wrap" href="#">
-                                <img src="#" alt="" class="customer__logo">
+                                <img src="hd.png" alt="" class="customer__logo">
                             </a>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                </div>
+                <div class="row">
+                    <div class="col-6 col-md-2">
                         <div class="customer">
                             <a class="customer__logo-wrap" href="#">
                                 <img src="Db.png" alt="" class="customer__logo">
                             </a>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-2">
                         <div class="customer">
                             <a class="customer__logo-wrap" href="#">
                                 <img src="ankomteh1.png" alt="" class="customer__logo">
                             </a>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-2">
                         <div class="customer">
                             <a class="customer__logo-wrap" href="#">
                                 <img src="TruckBel1.png" alt="" class="customer__logo">
                             </a>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-2">
                         <div class="customer">
                             <a class="customer__logo-wrap" href="#">
-                                <img src="#" alt="" class="customer__logo">
+                                <img src="autobase.png" alt="" class="customer__logo">
                             </a>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-2">
                         <div class="customer">
                             <a class="customer__logo-wrap" href="#">
                                 <img src="ksm.png" alt="" class="customer__logo">
                             </a>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-2">
                         <div class="customer">
                             <a class="customer__logo-wrap" href="#">
                                 <img src="Autooptimal1.png" alt="" class="customer__logo">
@@ -1879,31 +1886,68 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-2">
                         <div class="customer">
                             <a class="customer__logo-wrap" href="#">
                                 <img src="agroimport.png" alt="" class="customer__logo">
                             </a>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-2">
                         <div class="customer">
                             <a class="customer__logo-wrap" href="#">
                                 <img src="addinol.png" alt="" class="customer__logo">
                             </a>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-2">
                         <div class="customer">
                             <a class="customer__logo-wrap" href="#">
-                                <img src="#" alt="" class="customer__logo">
+                                <img src="Probar1.png" alt="" class="customer__logo">
                             </a>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-2">
                         <div class="customer">
                             <a class="customer__logo-wrap" href="#">
                                 <img src="fara.png" alt="" class="customer__logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <div class="customer">
+                            <a class="customer__logo-wrap" href="#">
+                                <img src="Opoltrans.png" alt="" class="customer__logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <div class="customer">
+                            <a class="customer__logo-wrap" href="#">
+                                <img src="rs.png" alt="" class="customer__logo">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 col-md-2">
+                        <div class="customer">
+                            <a class="customer__logo-wrap" href="#">
+                                <img src="sexopt1.png" alt="" class="customer__logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <div class="customer">
+                            <a class="customer__logo-wrap" href="#">
+                                <img src="L_Town2.png" alt="" class="customer__logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <div class="customer">
+                            <a class="customer__logo-wrap" href="#">
+                                <img src="Slavia_auto.jpg" alt="" class="customer__logo">
                             </a>
                         </div>
                     </div>
@@ -1915,63 +1959,45 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="row">
-                                    <div class="col-6 col-md-3">
+                                    <div class="col-6 col-md-4">
                                         <div class="customer">
                                             <a class="customer__logo-wrap" href="#">
                                                 <img src="torsion_group.png" alt="" class="customer__logo">
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-md-3">
+                                    <div class="col-6 col-md-4">
                                         <div class="customer">
                                             <a class="customer__logo-wrap" href="#">
                                                 <img src="bts.png" alt="" class="customer__logo">
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-md-3">
+                                    <div class="col-6 col-md-4">
                                         <div class="customer">
                                             <a class="customer__logo-wrap" href="#">
                                                 <img src="atm.png" alt="" class="customer__logo">
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-md-3">
+                                    <div class="col-6 col-md-4">
                                         <div class="customer">
                                             <a class="customer__logo-wrap" href="#">
                                                 <img src="Nano.png" alt="" class="customer__logo">
                                             </a>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-6 col-md-3">
+                                    <div class="col-6 col-md-4">
                                         <div class="customer">
                                             <a class="customer__logo-wrap" href="#">
                                                 <img src="xl_group2.png" alt="" class="customer__logo">
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-md-3">
+                                    <div class="col-6 col-md-4">
                                         <div class="customer">
                                             <a class="customer__logo-wrap" href="#">
-                                                <img src="#" alt="" class="customer__logo">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-3">
-                                        <div class="customer">
-                                            <a class="customer__logo-wrap" href="#">
-                                                <img src="Db.png" alt="" class="customer__logo">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-3">
-                                        <div class="customer">
-                                            <a class="customer__logo-wrap" href="#">
-                                                <img src="ankomteh1.png" alt="" class="customer__logo">
+                                                <img src="hd.png" alt="" class="customer__logo">
                                             </a>
                                         </div>
                                     </div>
@@ -1979,28 +2005,42 @@
                             </div>
                             <div class="carousel-item">
                                 <div class="row">
-                                    <div class="col-6 col-md-3">
+                                    <div class="col-6 col-md-4">
+                                        <div class="customer">
+                                            <a class="customer__logo-wrap" href="#">
+                                                <img src="Db.png" alt="" class="customer__logo">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <div class="customer">
+                                            <a class="customer__logo-wrap" href="#">
+                                                <img src="ankomteh1.png" alt="" class="customer__logo">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4">
                                         <div class="customer">
                                             <a class="customer__logo-wrap" href="#">
                                                 <img src="TruckBel1.png" alt="" class="customer__logo">
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-md-3">
+                                    <div class="col-6 col-md-4">
                                         <div class="customer">
                                             <a class="customer__logo-wrap" href="#">
-                                                <img src="#" alt="" class="customer__logo">
+                                                <img src="autobase.png" alt="" class="customer__logo">
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-md-3">
+                                    <div class="col-6 col-md-4">
                                         <div class="customer">
                                             <a class="customer__logo-wrap" href="#">
                                                 <img src="ksm.png" alt="" class="customer__logo">
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-md-3">
+                                    <div class="col-6 col-md-4">
                                         <div class="customer">
                                             <a class="customer__logo-wrap" href="#">
                                                 <img src="Autooptimal1.png" alt="" class="customer__logo">
@@ -2011,31 +2051,70 @@
                             </div>
                             <div class="carousel-item">
                                 <div class="row">
-                                    <div class="col-6 col-md-3">
+                                    <div class="col-6 col-md-4">
                                         <div class="customer">
                                             <a class="customer__logo-wrap" href="#">
                                                 <img src="agroimport.png" alt="" class="customer__logo">
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-md-3">
+                                    <div class="col-6 col-md-4">
                                         <div class="customer">
                                             <a class="customer__logo-wrap" href="#">
                                                 <img src="addinol.png" alt="" class="customer__logo">
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-md-3">
+                                    <div class="col-6 col-md-4">
                                         <div class="customer">
                                             <a class="customer__logo-wrap" href="#">
-                                                <img src="#" alt="" class="customer__logo">
+                                                <img src="Probar1.png" alt="" class="customer__logo">
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-md-3">
+                                    <div class="col-6 col-md-4">
                                         <div class="customer">
                                             <a class="customer__logo-wrap" href="#">
                                                 <img src="fara.png" alt="" class="customer__logo">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <div class="customer">
+                                            <a class="customer__logo-wrap" href="#">
+                                                <img src="Opoltrans.png" alt="" class="customer__logo">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <div class="customer">
+                                            <a class="customer__logo-wrap" href="#">
+                                                <img src="rs.png" alt="" class="customer__logo">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-6 col-md-4">
+                                        <div class="customer">
+                                            <a class="customer__logo-wrap" href="#">
+                                                <img src="sexopt1.png" alt="" class="customer__logo">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <div class="customer">
+                                            <a class="customer__logo-wrap" href="#">
+                                                <img src="L_Town2.png" alt="" class="customer__logo">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <div class="customer">
+                                            <a class="customer__logo-wrap" href="#">
+                                                <img src="Slavia_auto.jpg" alt="" class="customer__logo">
                                             </a>
                                         </div>
                                     </div>

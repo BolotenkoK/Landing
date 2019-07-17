@@ -23,9 +23,6 @@ font-family: "Proxima Nova Rg";
 src: url(fonts/Proxima_Nova_Regular.otf);
 }
 
-/* .main {
-    background-color: #171717;
-} */
 .navbar {
     max-width: 1160px;
     align-self: center;
@@ -37,6 +34,10 @@ src: url(fonts/Proxima_Nova_Regular.otf);
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between; 
+}
+
+.navbar-brand {
+    padding-top: 0px;
 }
 
 .navbar-nav {
@@ -72,6 +73,10 @@ src: url(fonts/Proxima_Nova_Regular.otf);
     font-size: 14px;
     font-weight: 500;
     color: #494949!important;
+}
+
+.lang-btn.dropdown {
+    padding-bottom: 2.5px;
 }
 
 .lang-btn .dropdown-toggle {
@@ -132,19 +137,6 @@ src: url(fonts/Proxima_Nova_Regular.otf);
     overflow: hidden;
     margin-bottom: -1px;
 }
-
-/* .intro__line {
-    height: 4px;
-    background-color: #3bc431;
-    transform: rotate(-28deg);
-    margin-top: 0;
-    margin-bottom: 0;
-    width: 435px;
-    position: absolute;
-    z-index: 1;
-    left: -29px;
-    top: -16px;
-} */
 
 .intro__title {
     color: #fff;
@@ -766,6 +758,7 @@ iframe {
 .services-info {
     background-image: url('service-background.png');
     background-position: right;
+    background-repeat: no-repeat;
     display:-webkit-box;
     display:-webkit-flex;
     display:-ms-flexbox;
@@ -781,6 +774,7 @@ iframe {
         -ms-flex-direction: column;
             flex-direction: column;
     height: 510px;
+    margin-top: -1px;
 }
 
     
@@ -967,7 +961,7 @@ iframe {
 
 .functionality__title {
     font-size: 48px;
-    /* font-family: "ProximaNova"; */
+    font-family: "Proxima Nova Bl";
     color: rgb(46, 48, 46);
     font-weight: bold;
     text-transform: uppercase;
@@ -983,7 +977,7 @@ iframe {
 
 .functionality__text-caption:first-child {
     font-size: 22px;
-    /* font-family: "ProximaNova"; */
+    font-family: "Proxima Nova Rg";
     color: rgb(46, 48, 46);
     line-height: 1.2;
     text-align: left;
@@ -992,7 +986,7 @@ iframe {
   
 .functionality__text-caption:nth-child(2) {
     font-size: 30px;
-    /* font-family: "ProximaNova"; */
+    font-family: "Proxima Nova Lt";
     color: rgb(255, 255, 255);
     line-height: 1.2;
     letter-spacing: 2px;
@@ -1000,7 +994,7 @@ iframe {
 
 .functionality__text-caption:nth-child(3) {
     font-size: 18px;
-    /* font-family: "ProximaNova"; */
+    font-family: "Proxima Nova Lt";
     color: rgb(255, 255, 255);
     line-height: 0.6;
     letter-spacing: 1px;
@@ -1012,7 +1006,7 @@ iframe {
   
 .form-control {
     font-size: 20px;
-    /* font-family: "ProximaNova"; */
+    font-family: "Proxima Nova Lt";
     color: rgb(255, 255, 255);
     line-height: 1.2;
     border-bottom: 1px solid #fff;
@@ -1035,7 +1029,7 @@ iframe {
   
 .form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     font-size: 20px;
-    /* font-family: "ProximaNova"; */
+    font-family: "Proxima Nova Lt";
     color: rgb(255, 255, 255);
     line-height: 1.2;
     padding-left: 10px;
@@ -1043,7 +1037,7 @@ iframe {
 
 .form-control::-moz-placeholder { /* Firefox 19+ */
     font-size: 20px;
-    /* font-family: "ProximaNova"; */
+    font-family: "Proxima Nova Lt";
     color: rgb(255, 255, 255);
     line-height: 1.2;
     padding-left: 10px;
@@ -1051,7 +1045,7 @@ iframe {
 
 .form-control:-ms-input-placeholder { /* IE 10+ */
     font-size: 20px;
-    /* font-family: "ProximaNova"; */
+    font-family: "Proxima Nova Lt";
     color: rgb(255, 255, 255);
     line-height: 1.2;
     padding-left: 10px;
@@ -1059,7 +1053,7 @@ iframe {
 
 .form-control:-moz-placeholder { /* Firefox 18- */
     font-size: 20px;
-    /* font-family: "ProximaNova"; */
+    font-family: "Proxima Nova Lt";
     color: rgb(255, 255, 255);
     line-height: 1.2;
     padding-left: 10px;
@@ -1096,7 +1090,7 @@ iframe {
 
 .functionality__button span {
     font-size: 18px;
-    /* font-family: "ProximaNova"; */
+    font-family: "Proxima Nova Rg";
     color: rgb(26, 28, 26);
     font-weight: bold;
     line-height: 1.2;
@@ -1136,7 +1130,7 @@ iframe {
     list-style-image: url(white-line.svg);
     list-style-position: outside;
     font-size: 16px;
-    /* font-family: "ProximaNova"; */
+    font-family: "Proxima Nova Rg";
     color: rgb(153, 153, 153);
     letter-spacing: 0.1px;
     line-height: 1.2;
@@ -1174,7 +1168,7 @@ iframe {
 
 .gallery-slider__text {
     font-size: 16px;
-    /* font-family: "ProximaNova"; */
+    font-family: "Proxima Nova Rg";
     color: rgb(255, 255, 255);
     line-height: 1.75;
     letter-spacing: 1px;
@@ -1321,7 +1315,6 @@ iframe {
     border: none;
     transform: rotate(180deg);
     position: relative;
-    background-color: #000;
     background-image: url("arrow.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -1423,6 +1416,9 @@ iframe {
     background-color: #56d84d;
     transform: rotate(180deg);
     color: #fff;
+    background-image: url(arrow.png);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .card-body__button:focus {
@@ -1617,7 +1613,7 @@ iframe {
 
 .realization__item-number-wrap {
     font-size: 26px;
-    /* font-family: "ProximaNova Bold"; */
+    font-family: "Proxima Nova Rg";
     font-weight: bold;
     text-align: left;
     width: 33px;
@@ -1654,7 +1650,7 @@ iframe {
 
 .realization__item-title {
     font-size: 24px;
-    /* font-family: "ProximaNova Bold"; */
+    font-family: "Proxima Nova Rg";
     font-weight: bold;
     line-height: 1;
     text-align: center;
@@ -1670,7 +1666,7 @@ iframe {
 
 .realization__theses {
     font-size: 16px;
-    /* font-family: "ProximaNova Semibold"; */
+    font-family: "Proxima Nova Lt";
     color: rgb(26, 28, 26);
     line-height: 1.2;
     text-align: center;
@@ -2292,6 +2288,7 @@ iframe {
 
 .customer {
     width: 100%;
+    height: 120px;
 }
 
 .customer__logo-wrap {
@@ -2304,6 +2301,7 @@ iframe {
     max-width: 198px;
     width: 98%;
     height: auto;
+    max-height: 120px;
     margin: 0 auto;
     display: block;
 }
@@ -2712,6 +2710,8 @@ footer {
     .services-info__items {
         margin-left: 0%;
         height: auto;
+        width: 98%;
+        padding-left: 13px;
     }
 
     .services-info__item {
@@ -2730,8 +2730,16 @@ footer {
     }
 
     .services-info__item_document .services-info__item-text {
-        line-height: 24px;
-        font-size: 22px;
+        line-height: 20px;
+        font-size: 18px;
+    }
+
+    .services-info__item_service .services-info__item-text {
+        font-size: 18px;
+    }
+
+    .services-info__item_service {
+        margin-bottom: 15px;
     }
 
     .services-info__item-text {
